@@ -4,11 +4,10 @@ var Game = {
   y: -1,
   mapData: {},
   monsters: [],
-  init: function() {
+  init: function () {
     var width = 60, height = 40;
     //ROT.RNG.setSeed(1234);
 
-    var map = new ROT.Map.Rogue(width, height);
     this.display = new ROT.Display({
       width: width,
       height: height,
@@ -18,10 +17,10 @@ var Game = {
       spacing: 1.1
     });
 
+    var map = new ROT.Map.Rogue(width, height);
     var mapData = this.mapData;
-    map.create(function(x, y, wall) {
+    map.create(function (x, y, wall) {
       mapData[x + "," + y] = wall ? "#" : ".";
-      //this.display.draw(x, y, wall ? "#" : ".");
     });
 
     // initial player position
@@ -55,7 +54,7 @@ var Game = {
   monsterAction: function () {
     var display = this.display;
     var mapData = this.mapData;
-    var passableCallback = function(x, y) {
+    var passableCallback = function (x, y) {
       return (mapData[x + "," + y] == ".");
     };
     var playerX = this.x, playerY = this.y;
@@ -64,7 +63,7 @@ var Game = {
       mapData[obj.x + "," + obj.y] = ".";
       var i = 0;
       var dijkstra = new ROT.Path.Dijkstra(playerX, playerY, passableCallback);
-      dijkstra.compute(obj.x, obj.y, function(x, y) {
+      dijkstra.compute(obj.x, obj.y, function (x, y) {
         if (i++ == 1 && !(x == playerX && y == playerY) ) {
           obj.x = x;
           obj.y = y;
@@ -113,7 +112,7 @@ var Game = {
     var fov = new ROT.FOV.PreciseShadowcasting(this.getLightPasses(this.mapData));
     var display = this.display;
     var mapData = this.mapData;
-    fov.compute(this.x, this.y, 20, function(x, y, r, visibility) {
+    fov.compute(this.x, this.y, 20, function (x, y, r, visibility) {
       var ch = (r ? mapData[x + "," + y] : "@");
       display.draw(x, y, ch);
     });
