@@ -123,7 +123,7 @@ var Game = {
     document.getElementById("td2_2").appendChild(textarea);
 
     document.body.addEventListener("keypress", this.onKeyPress.bind(this));
-    this.timerId = window.setInterval(this.turn.bind(this), 500);
+    this.timerId = window.setInterval(this.turn.bind(this), 42);
     this.log("hjkl - move");
     this.status();
     this.draw();
@@ -169,7 +169,7 @@ var Game = {
       );
     }
     this.monsterMove();
-    this.damage = Math.max(this.damage - this.roll(this.ring[1]), 0);
+    this.damage = Math.max(this.damage - this.roll(this.ring[1]), 0); // recovery
     this.status();
   },
   lottery: function (item, max_stage, type) {
@@ -274,8 +274,27 @@ var Game = {
           moved = true;
         }
       });
+      // random walk
+      if (!moved && (Math.abs(playerX - obj.x) > 1 || Math.abs(playerY - obj.y) > 1)) {
+        var walkable = [];
+        var none = true;
+        for (var i = 0, l = this.AROUND.length; i < l; ++i) {
+          var move = this.AROUND[i];
+          new_x = obj.x + move[0];
+          new_y = obj.y + move[1];
+          if (mapData[new_x + "," + new_y] == ".") {
+            walkable.push([new_x, new_y]);
+          }
+        }
+        if (walkable.length > 0) {
+          var next = walkable[parseInt(ROT.RNG.getUniform() * walkable.length)];
+          obj.x = next[0];
+          obj.y = next[1];
+          moved = true;
+        }
+      }
       mapData[obj.x + "," + obj.y] = obj.symbol;
-      obj.damage = Math.max(obj.damage - this.roll(obj.ring[1]), 0);
+      obj.damage = Math.max(obj.damage - this.roll(obj.ring[1]), 0); // recovery
     }, this);
 
     // redraw if moved
