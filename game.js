@@ -6,16 +6,16 @@ var Game = {
   monsters: [],
   stages: {
      0: { interval: 10, monster: { symbol: "a", hp: Math.max(1, parseInt( Math.exp( 1 / 4) * 10 / 4 )), name: "angel" },   weapon: [ ["None", 0] ], armor: [ ["None", 0] ], ring: [ ["None", 0] ] },
-     1: { interval: 10, monster: { symbol: "b", hp: Math.max(1, parseInt( Math.exp( 1 / 4) * 10 / 2 )), name: "beetle" },  boss: { symbol: "1", hp: Math.max(1, parseInt( Math.exp( 2 / 2) * 10) ), name: "one" }, weapon: [], armor: [], ring: [] },
-     2: { interval: 10, monster: { symbol: "c", hp: Math.max(1, parseInt( Math.exp( 2 / 4) * 10 / 2 )), name: "centaur" }, boss: { symbol: "2", hp: Math.max(1, parseInt( Math.exp( 3 / 2) * 10) ), name: "two" }, weapon: [], armor: [], ring: [] },
-     3: { interval: 10, monster: { symbol: "d", hp: Math.max(1, parseInt( Math.exp( 3 / 4) * 10 / 2 )), name: "dragon" },  boss: { symbol: "3", hp: Math.max(1, parseInt( Math.exp( 4 / 2) * 10) ), name: "three" }, weapon: [], armor: [], ring: [] },
-     4: { interval: 10, monster: { symbol: "e", hp: Math.max(1, parseInt( Math.exp( 4 / 4) * 10 / 2 )), name: "eyes" },    boss: { symbol: "4", hp: Math.max(1, parseInt( Math.exp( 5 / 2) * 10) ), name: "four" }, weapon: [], armor: [], ring: [] },
-     5: { interval: 10, monster: { symbol: "f", hp: Math.max(1, parseInt( Math.exp( 5 / 4) * 10 / 2 )), name: "feline" },  boss: { symbol: "5", hp: Math.max(1, parseInt( Math.exp( 6 / 2) * 10) ), name: "five" }, weapon: [], armor: [], ring: [] },
-     6: { interval: 10, monster: { symbol: "g", hp: Math.max(1, parseInt( Math.exp( 6 / 4) * 10 / 2 )), name: "golem" },   boss: { symbol: "6", hp: Math.max(1, parseInt( Math.exp( 7 / 2) * 10) ), name: "six" }, weapon: [], armor: [], ring: [] },
-     7: { interval: 10, monster: { symbol: "h", hp: Math.max(1, parseInt( Math.exp( 7 / 4) * 10 / 2 )), name: "hobbit" },  boss: { symbol: "7", hp: Math.max(1, parseInt( Math.exp( 8 / 2) * 10) ), name: "seven" }, weapon: [], armor: [], ring: [] },
-     8: { interval: 10, monster: { symbol: "i", hp: Math.max(1, parseInt( Math.exp( 8 / 4) * 10 / 2 )), name: "ice" },     boss: { symbol: "8", hp: Math.max(1, parseInt( Math.exp( 9 / 2) * 10) ), name: "eight" }, weapon: [], armor: [], ring: [] },
-     9: { interval: 10, monster: { symbol: "j", hp: Math.max(1, parseInt( Math.exp( 9 / 4) * 10 / 2 )), name: "jelly" },   boss: { symbol: "9", hp: Math.max(1, parseInt( Math.exp(10 / 2) * 10) ), name: "nine" }, weapon: [], armor: [], ring: [] },
-    10: { interval: 10, monster: { symbol: "k", hp: Math.max(1, parseInt( Math.exp(10 / 4) * 10 / 2 )), name: "kobold" },  boss: { symbol: "0", hp: Math.max(1, parseInt( Math.exp(12 / 2) * 10) ), name: "zero" }, weapon: [], armor: [], ring: [] },
+     1: { interval:  9, monster: { symbol: "b", hp: Math.max(1, parseInt( Math.exp( 1 / 4) * 10 / 2 )), name: "beetle" },  boss: { symbol: "1", hp: Math.max(1, parseInt( Math.exp( 2 / 2) * 10) ), name: "The One" }, weapon: [], armor: [], ring: [] },
+     2: { interval:  9, monster: { symbol: "c", hp: Math.max(1, parseInt( Math.exp( 2 / 4) * 10 / 2 )), name: "centaur" }, boss: { symbol: "2", hp: Math.max(1, parseInt( Math.exp( 3 / 2) * 10) ), name: "The Two" }, weapon: [], armor: [], ring: [] },
+     3: { interval:  8, monster: { symbol: "d", hp: Math.max(1, parseInt( Math.exp( 3 / 4) * 10 / 2 )), name: "dragon" },  boss: { symbol: "3", hp: Math.max(1, parseInt( Math.exp( 4 / 2) * 10) ), name: "The Three" }, weapon: [], armor: [], ring: [] },
+     4: { interval:  8, monster: { symbol: "e", hp: Math.max(1, parseInt( Math.exp( 4 / 4) * 10 / 2 )), name: "eyes" },    boss: { symbol: "4", hp: Math.max(1, parseInt( Math.exp( 5 / 2) * 10) ), name: "The Four" }, weapon: [], armor: [], ring: [] },
+     5: { interval:  7, monster: { symbol: "f", hp: Math.max(1, parseInt( Math.exp( 5 / 4) * 10 / 2 )), name: "feline" },  boss: { symbol: "5", hp: Math.max(1, parseInt( Math.exp( 6 / 2) * 10) ), name: "The Five" }, weapon: [], armor: [], ring: [] },
+     6: { interval:  6, monster: { symbol: "g", hp: Math.max(1, parseInt( Math.exp( 6 / 4) * 10 / 2 )), name: "golem" },   boss: { symbol: "6", hp: Math.max(1, parseInt( Math.exp( 7 / 2) * 10) ), name: "The Six" }, weapon: [], armor: [], ring: [] },
+     7: { interval:  5, monster: { symbol: "h", hp: Math.max(1, parseInt( Math.exp( 7 / 4) * 10 / 2 )), name: "hobbit" },  boss: { symbol: "7", hp: Math.max(1, parseInt( Math.exp( 8 / 2) * 10) ), name: "The Seven" }, weapon: [], armor: [], ring: [] },
+     8: { interval:  4, monster: { symbol: "i", hp: Math.max(1, parseInt( Math.exp( 8 / 4) * 10 / 2 )), name: "ice" },     boss: { symbol: "8", hp: Math.max(1, parseInt( Math.exp( 9 / 2) * 10) ), name: "The Eight" }, weapon: [], armor: [], ring: [] },
+     9: { interval:  3, monster: { symbol: "j", hp: Math.max(1, parseInt( Math.exp( 9 / 4) * 10 / 2 )), name: "jelly" },   boss: { symbol: "9", hp: Math.max(1, parseInt( Math.exp(10 / 2) * 10) ), name: "The Nine" }, weapon: [], armor: [], ring: [] },
+    10: { interval:  2, monster: { symbol: "k", hp: Math.max(1, parseInt( Math.exp(10 / 4) * 10 / 2 )), name: "kobold" },  boss: { symbol: "0", hp: Math.max(1, parseInt( Math.exp(12 / 2) * 10) ), name: "The Zero" }, weapon: [], armor: [], ring: [] },
     11: { interval: 10, monster: { symbol: "l", hp: Math.max(1, parseInt( Math.exp(11 / 4) * 10 / 2 )), name: "lich" },    weapon: [], armor: [], ring: [] },
     12: { interval: 10, monster: { symbol: "m", hp: Math.max(1, parseInt( Math.exp(12 / 4) * 10 / 2 )), name: "mummy" },   weapon: [], armor: [], ring: [] },
     13: { interval: 10, monster: { symbol: "n", hp: Math.max(1, parseInt( Math.exp(13 / 4) * 10 / 2 )), name: "naga" },    weapon: [], armor: [], ring: [] },
@@ -37,7 +37,7 @@ var Game = {
   hp: 12,
   damage: 0,
   ac: 0,
-  weapon: [ "Magic Broken Dagger", "1d2 + 5000" ],
+  weapon: [ "Magic Broken Dagger", "1d2 + 2" ],
   armor: [ "None", 0 ],
   ring: [ "Old Ring", 1 ],
   init: function () {
@@ -157,20 +157,58 @@ var Game = {
     ++this.turnNum;
     if (this.turnNum % this.stages[this.stage].interval == 0) {
       var monster_stage = this.getTarget(this.stage);
-      var weapon_stage = monster_stage;
-      var armor_stage = monster_stage;
-      var ring_stage = monster_stage;
+      var weapon_stage = this.getTarget(this.stage);
+      var armor_stage = this.getTarget(this.stage);
+      var ring_stage = this.getTarget(this.stage);
       this.addMonster(
         this.stages[monster_stage].monster,
         this.stages[this.stage],
-        this.stages[weapon_stage].weapon[parseInt(ROT.RNG.getUniform() * this.stages[weapon_stage].weapon.length)],
-        this.stages[armor_stage].armor[parseInt(ROT.RNG.getUniform() * this.stages[armor_stage].armor.length)],
-        this.stages[ring_stage].ring[parseInt(ROT.RNG.getUniform() * this.stages[ring_stage].ring.length)]
+        this.lottery(this.stages[weapon_stage].weapon[parseInt(ROT.RNG.getUniform() * this.stages[weapon_stage].weapon.length)], weapon_stage, "weapon"),
+        this.lottery(this.stages[armor_stage].armor[parseInt(ROT.RNG.getUniform() * this.stages[armor_stage].armor.length)]    , armor_stage,  "armor"),
+        this.lottery(this.stages[ring_stage].ring[parseInt(ROT.RNG.getUniform() * this.stages[ring_stage].ring.length)]        , ring_stage,   "ring")
       );
     }
     this.monsterMove();
     this.damage = Math.max(this.damage - this.roll(this.ring[1]), 0);
     this.status();
+  },
+  lottery: function (item, max_stage, type) {
+    if (!item) {
+      return item;
+    }
+    var new_item = item.slice(0);
+    var r = ROT.RNG.getUniform();
+    var add_num = 0;
+
+    if (0.01 <= r && r < 0.1) {
+      new_item[0] = "Magic " + new_item[0];
+      add_num = 1;
+
+    } else if (0.001 <= r && r < 0.01) {
+      new_item[0] = "Rare " + new_item[0];
+      add_num = 2;
+
+    } else if (0.0001 <= r && r < 0.001) {
+      new_item[0] = "Legendary " + new_item[0];
+      add_num = 3;
+
+    } else if (0.00001 <= r && r < 0.0001) {
+      new_item[0] = "Farming " + new_item[0];
+      add_num = 4;
+
+    } else if (r < 0.00001) {
+      new_item[0] = "Imbalance " + new_item[0];
+      add_num = 5;
+
+    }
+
+    // add bonus
+    for (var i = 0; i < add_num; ++i) {
+      var selected_stage = parseInt(ROT.RNG.getUniform() * (max_stage + 1));
+      new_item[1] += " + " + this.stages[selected_stage][type][parseInt(ROT.RNG.getUniform() * this.stages[selected_stage][type].length)][1];
+    }
+
+    return new_item;
   },
   AROUND: [ [ 1, 0 ], [ 1, 1 ], [ 0, 1 ], [ -1, 1 ], [ -1, 0 ], [ -1, -1 ], [ 0, -1 ], [ 1, -1 ] ],
   addMonster: function (obj, pos, weapon, armor, ring) {
@@ -279,7 +317,7 @@ var Game = {
       mapData[new_x + "," + new_y] = ".";
       this.log(monster.name + " dead.");
       // loot
-      if (monster.weapon[0] != "None") {
+      if (monster.weapon[1] != 0) {
         this.log(monster.name + " drops " + monster.weapon[0] + ".");
         if (this.roll(monster.weapon[1], this.ROLL_MEAN) > this.roll(this.weapon[1], this.ROLL_MEAN)
           || (this.roll(monster.weapon[1], this.ROLL_MEAN) == this.roll(this.weapon[1], this.ROLL_MEAN)
@@ -288,7 +326,7 @@ var Game = {
           this.log(") - " + this.weapon[0] + " (" + this.weapon[1] + ")");
         }
       }
-      if (monster.armor[0] != "None") {
+      if (monster.armor[1] != 0) {
         this.log(monster.name + " drops " + monster.armor[0] + ".");
         if (this.roll(monster.armor[1], this.ROLL_MEAN) > this.roll(this.armor[1], this.ROLL_MEAN)
           || (this.roll(monster.armor[1], this.ROLL_MEAN) == this.roll(this.armor[1], this.ROLL_MEAN)
@@ -297,7 +335,7 @@ var Game = {
           this.log("] - " + this.armor[0] + " [" + this.armor[1] + "]");
         }
       }
-      if (monster.ring[0] != "None") {
+      if (monster.ring[1] != 0) {
         this.log(monster.name + " drops " + monster.ring[0] + ".");
         if (this.roll(monster.ring[1], this.ROLL_MEAN) > this.roll(this.ring[1], this.ROLL_MEAN)
           || (this.roll(monster.ring[1], this.ROLL_MEAN) == this.roll(this.ring[1], this.ROLL_MEAN)
@@ -308,10 +346,10 @@ var Game = {
       }
       // level up
       this.exp += parseInt(this.roll(monster.weapon[1] + " + " + monster.ring[1] + " + " + monster.ring[1], this.ROLL_MIN));
-      this.level = Math.max( 1, parseInt(Math.log(this.exp / 10) * 1) );
+      this.level = Math.max( 1, parseInt(Math.log(this.exp / 10) * 2) );
       this.hp = parseInt( Math.exp(this.level / 4) * 10 );
       if (monster.symbol == "0") {
-        this.gameover(true);
+        return this.gameover(true);
       } else if (monster.symbol.match(/\d/)) {
         ++this.stage;
       }
@@ -324,6 +362,10 @@ var Game = {
       var new_x = this.x + move[0], new_y = this.y + move[1];
       if (mapData[new_x + "," + new_y].match(/[0-9a-z]/)) {
         var add_damage = Math.max(this.roll(monster.weapon[1]) - this.roll(this.armor[1]), 0);
+
+        // monster handicap for easy
+        add_damage = parseInt(add_damage * 0.8);
+
         this.damage += add_damage;
         this.log(add_damage + " damage. You " + (this.hp - this.damage) + "/" + this.hp);
         if (this.damage >= this.hp) {
